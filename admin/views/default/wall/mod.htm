@@ -1,0 +1,28 @@
+<form action="<{$app}>/notice/mod" method="post" accept-charset="utf-8">
+	<table border="0">
+		<input type="hidden" name="nid" value="<{$notice.nid}>">
+		<tr>
+			<td>标题：</td>
+			<td><input type="text" name="title" value="<{$notice.title}>" /></td>
+			</tr>
+		<tr>
+				<td>开始时间：</td>
+				<td><input type="text" name="strtime" value="<{$notice.strtime|date_format:"%Y-%m-%d"}>" onfocus="HS_setDate(this)"/></td>
+				<td>结束时间：</td>
+				<td><input type="text" name="stptime" value="<{$notice.stptime|date_format:"%Y-%m-%d"}>" onfocus="HS_setDate(this)"/></td>
+
+		</tr>
+		<tr>
+			<td style="vertical-align: top;">内容：</td>
+			<td colspan="3"><textarea style="width: 410px; height: 98px;" name="content" rows="" cols=""><{$notice.content}></textarea></td>
+		</tr>
+		<tr>
+			<td>立即发布</td>
+			<td><input type="checkbox" name="isshow" value=""></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name="sub" value="提交&rarr;" /></td>
+			<td><input type="reset" name="" value="重置" /></td>
+		</tr>
+	</table>
+</form>

@@ -1,0 +1,27 @@
+<table border="0" class="list">
+	<tr>
+		<th width="20">&nbsp;</th>
+		<th width="300">内容</th>
+		<th width="100">用户</th>
+		<th width="100">时间</th>
+		<th width="100">操作</th>
+	</tr>
+	
+
+	<{section loop=$wall name="ls" start="0" step="1"}>
+				<tr>
+					<td><input type="checkbox" name="wid[]" value="<{$wall[ls].wid}>" /></td>
+					<td><{$wall[ls].content|truncate:50}></td>
+					<td><{$wall[ls].username}></td>
+					<td><{$wall[ls].ctime|date_format:"%Y-%m-%d"}></td>
+					<td>
+						<a id="" href="" onclick="var rel=confirm('确定要删除么？');if(rel)this.href='<{$app}>/wall/del/wid/<{$wall[ls].wid}>';">删除</a>
+					</td>
+				</tr>
+	
+		<{sectionelse}>	
+				无留言
+		<{/section}>
+		<tr><td align="right" colspan="5"><{$fpage}></td></tr>	
+</table>
+

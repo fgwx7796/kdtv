@@ -1,0 +1,121 @@
+<div class="center_content_pages">
+	<div class="left_content"> 
+		<div class="pages_banner"><{$video.title}></div>
+			<div id="player" class="" style="display: inline-block";> 
+				<!--酷播迷你 CuPlayerMiniV2.2 代码开始-->
+				<script type="text/javascript" src="<{$res}>/CuPlayer/Images/swfobject.js"></script>
+				<div id="CuPlayer" > <strong>科大电视台温馨提示：您的Flash Player版本过低，请<a href="http://www.adobe.com/" >点此进行播放器升级</a>！</strong> </div>
+				<script type=text/javascript>
+				var so = new SWFObject("<{$res}>/CuPlayer/CuPlayerMiniV22_Black_S.swf","CuPlayer","600","365","9","#000000");
+				so.addParam("allowfullscreen","true");
+				so.addParam("allowscriptaccess","");
+				so.addParam("wmode","opaque");
+				so.addParam("quality","high");
+				so.addParam("salign","lt");
+				so.addVariable("CuPlayerFile","<{$video.url}>");//视频文件路径
+				so.addVariable("CuPlayerImage","<{$video.picurl}>");//视频预览图路径
+				so.addVariable("CuPlayerLogo","");//播放器logo路径
+				so.addVariable("CuPlayerShowImage","true");
+				so.addVariable("CuPlayerWidth","600");
+				so.addVariable("CuPlayerHeight","365");
+				so.addVariable("CuPlayerAutoPlay","false");
+				so.addVariable("CuPlayerAutoRepeat","false");
+				so.addVariable("CuPlayerShowControl","true");
+				so.addVariable("CuPlayerAutoHideControl","false");
+				so.addVariable("CuPlayerAutoHideTime","6");
+				so.addVariable("CuPlayerVolume","80");
+				so.write("CuPlayer");
+				</script>
+				<!--酷播迷你 CuPlayerMiniV2.2 代码结束-->
+			</div>
+			<div id="video_summary" class="">
+				<p class="videoSummary"><{$video.summary}></p>
+			</div>
+			<ul class="wall">
+			<{if $smarty.session.isLogin==0}>
+				<li>
+				<div id="" class="videologin">
+				<form action="<{$app}>/user/islogin" method="post" accept-charset="utf-8">
+					<table border="0" class="loginmini2">
+						<caption>请登录之后留言</caption>
+						<tr>
+							<td>用户名：</td>
+							<td colspan="2"><input type="text" name="username" value="" /></td>
+							<td><input class="form_submit" type="submit" name="sub" value="登陆" /> </td>
+						</tr>
+						<tr>
+							<td>密码：</td>
+							<td colspan="2"><input type="password" name="passwd" value="" /></td>
+							<td style="text-align: center;"><a href="#" class="reg">注册</a></td>
+						</tr>
+						<tr>
+							<td>验证码：</td>
+							<td><input type="text" name="code" value="" size="7"/></td>
+							<td><img class="vcode" src="<{$url}>/code" alt="" title="" border="-1" onclick="this.src='<{$url}>/code/'+Math.random()" /></td>
+						</tr>
+						
+					</table>
+				</form>
+			</div>
+			</li>
+			<{else}>
+			<li>
+				 <img class="faceLeft" src="<{$smarty.session.faceurl2}>" alt="" title="" border="0" />
+				 <div id="" class="walladd">
+					<form action="<{$app}>/comments/add" method="post" accept-charset="utf-8">
+						<textarea class="form_input" type="text" name="content" value="" style="height:70px;width:190px;background-color:white;margin-bottom: 10px;max-height: 200px; max-width: 190px;"></textarea>
+						验证码：<input type="text" name="code" value="" size="4" /><img class="vcode" src="<{$url}>/code" onclick="this.src='<{$url}>/code/'+Math.random()" /><br>
+						<input class="" type="hidden" name="vid" value="<{$video.vid}>" /> 
+						<input class="form_submit" type="submit" name="sub" value="留言" /> 								
+						<input class="form_submit" type="reset" name="some_name" value="重置" />
+					</form>
+				 </div>
+					
+				
+					
+				 <div style="clear:both"></div>
+				 
+			</li>
+			<{/if}>
+			 <{section loop=$comment name="ls" start="0" step="1" }>
+			 <li>
+			<{if $smarty.section.ls.iteration%2==0}>
+				<img class="faceRight" src="<{$comment[ls].face}>" alt="" title="" border="0" />
+			<{else}>
+				<img class="faceLeft" src="<{$comment[ls].face}>" alt="" title="" border="-1" />
+			<{/if}>
+				 <p class="content2"><span class="username"><{$comment[ls].userName}>：</span><{$comment[ls].content}> <span class="date2"><{$comment[ls].ctime|date_format:"%Y-%m-%d"}></span></p>	
+				 <div style="clear:both"></div>
+				 
+			</li>
+			<{/section}>
+		</ul>
+	</div> <!--end of left content-->
+
+
+	<div class="right_content">
+	   <div class="box290">
+		<h2>推荐视频</h2>
+			<ul class="left_menu" id="recombox">
+				
+			</ul>
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+		<script>
+		function ajaxBox(url, id){
+			var obj=document.getElementById(id);
+					obj.style.display = "block";
+			var ajax=Ajax();
+			ajax.get(url,function(data){
+					obj.innerHTML=data;
+					obj.style.display = "block";
+				});
+		}
+		function ajaxQuery(url){
+			var ajax=Ajax();
+			ajax.get(url);
+		}
+		ajaxBox("<{$app}>/video/recommend?cid=<{$video.cid}>", "recombox");
+	</script>

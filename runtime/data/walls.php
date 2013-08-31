@@ -1,0 +1,1 @@
+<?php {"pri":"wid","0":"uid","1":"ctime","2":"content"}

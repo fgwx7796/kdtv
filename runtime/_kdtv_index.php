@@ -1,0 +1,11 @@
+创建目录 ./runtime/ 成功.
+创建目录 ./runtime/cache/ 成功.
+创建目录 ./runtime/cache/default 成功.
+创建目录 ./runtime/comps/ 成功.
+创建目录 ./runtime/comps/default 成功.
+创建目录 ./runtime/comps/default/kdtv_index_php/ 成功.
+创建目录 ./runtime/data/ 成功.
+创建目录 ./runtime/controls/ 成功.
+创建目录 ./runtime/controls/kdtv_index_php/ 成功.
+创建目录 ./runtime/models/ 成功.
+创建目录 ./runtime/models/kdtv_index_php/ 成功.

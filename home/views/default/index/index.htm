@@ -1,0 +1,84 @@
+<div id="slider1" class="sliderwrapper">
+	<div class="slider_content">
+		<div id="featured">
+			<{section loop=$topVideo name="ls" start="0" step="1" max="5"}>
+			<div id="fragment-<{$smarty.section.ls.iteration}>" class="ui-tabs-panel" style="">
+					<img src="<{$topVideo[ls].picurl}>" alt="<{$topVideo[ls].title}>" title="<{$topVideo[ls].title}>" border="0" style="width:630px"/>
+					<div class="info" >
+					<p><{$topVideo[ls].summary|truncate:40}></p>
+					</div>
+				</div>
+			<{/section}>
+		<ul class="ui-tabs-nav">
+		<{section loop=$topVideo name="ls" start="0" step="1"}>
+	        <li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-<{$smarty.section.ls.iteration}>"><a href="#fragment-<{$smarty.section.ls.iteration}>"><{$topVideo[ls].title}></a></li>
+            
+		<{/section}>
+	    </ul>
+	   </div>
+	</div>
+</div>  <!--end of slider --> 
+
+		<div class="center_content">
+        	<div class="leftbox">
+		
+              <h2>最新视频</h2>
+			  <ul id="" class="col">
+
+				  <{section loop=$newVideo name="ls" start="0" step="1"}>
+
+				  <li class="colleft"><a href="<{$root}>/index.php/video/player/vid/<{$newVideo[ls].vid}>" target="_blank"><img src="<{$newVideo[ls].picurl}>" alt="<{$newVideo[ls].title}>" title="" border="0" />
+					  <p class="title"><{$newVideo[ls].title}></p></a>
+					</li>
+				<{/section}>
+				
+				</ul>
+ 				<div style="clear:both"></div>
+
+        	</div>
+        	<div class="leftbox_right">
+				<h2>留言墙</h1>
+				<div id="fpage" class="">
+						无留言
+				</div>
+		
+        	</div>
+
+        </div>
+        <div class="clear"></div>
+		<span onclick="window.scrollTo('0','0')" id="scrolltop" style="left: 1190px; visibility: visible;">回顶部</span>
+		
+		<script>
+			var cache=new Array();
+			function setPage(url){
+				var obj=document.getElementById("fpage");
+				
+				if(typeof(cache[url])=="undefined"){
+					var ajax=Ajax();
+
+					ajax.get(url,function(data){
+							obj.innerHTML=data;
+							cache[url]=data;	
+						});
+				}else{
+					obj.innerHTML=cache[url];	
+				}	
+			}
+			function ajaxBox(url, id){
+				var obj=document.getElementById(id);
+						obj.style.display = "block";
+				var ajax=Ajax();
+				ajax.get(url,function(data){
+						obj.innerHTML=data;
+						obj.style.display = "block";
+					});
+			}
+			function ajaxQuery(url){
+				var ajax=Ajax();
+				ajax.get(url);
+			}
+			setPage("<{$app}>/wall/walllist?page=1");
+			ajaxBox("<{$app}>/video/videolistindex?cid=<{$col.cid}>", "video");
+			ajaxBox("<{$app}>/video/videolistindex?cid=<{$col.cid}>", "video");
+			ajaxBox("<{$app}>/video/videolistindex?cid=<{$col.cid}>", "video");
+		</script>

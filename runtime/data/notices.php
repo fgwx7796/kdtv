@@ -1,0 +1,1 @@
+<?php {"pri":"nid","0":"title","1":"strtime","2":"stptime","3":"content","4":"isshow"}

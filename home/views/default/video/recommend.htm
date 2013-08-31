@@ -1,0 +1,14 @@
+<{section loop=$video name="ls" start="0" step="1"}>
+<li>
+	<a href="<{$app}>/video/player/vid/<{$video[ls].vid}>" title="">
+		<img src="<{$video[ls].picurl}>" alt="<{$video[ls].title}>" title="<{$video[ls].title}>" border="0" class="pages_pic" style="width:100px;height:70px;float:left;">
+		<span class="vsummary"><{$video[ls].title}></span><br>
+		<span class="vsummary">播放次数：<{$video[ls].time}>次</span><br>
+		<span class="vsummary"><{$video[ls].ltime|date_format:"%Y-%m-%d"}></span>
+	</a><div style="clear:both"> </div>
+</li>
+<{sectionelse}>	
+		无视频
+<{/section}>
+
+

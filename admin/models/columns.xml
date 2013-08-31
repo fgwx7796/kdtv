@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<form>
+	<input name="cname" type="notnull" msg="频道名不能为空!" />
+	<input name="cname" type="unique" msg="频道名已经存在空!" />
+	<input name="crank" type="notnull" msg="优先级不能为空!" />
+	<input name="crank" type="number" msg="优先级必须为数字!" />
+</form>

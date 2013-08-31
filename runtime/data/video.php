@@ -1,0 +1,1 @@
+<?php {"pri":"vid","0":"aid","1":"title","2":"url","3":"picurl","4":"ltime","5":"mtime","6":"summary","7":"good","8":"bad","9":"time","10":"cid","11":"top"}

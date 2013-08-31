@@ -1,0 +1,9 @@
+<h1>用户注册</h1>
+<form action="<{$url}>/insert" method="post">
+	username: <input type="text" name="adminname"><br>
+	password: <input type="password" name="passwd"><br>
+	repassword: <input type="password" name="repasswd"><br>
+	code: <input type="text" name="code"> <img src="<{$url}>/code" onclick="this.src='<{$url}>/code/'+Math.random()"><br>
+	
+	<input type="submit" name="sub" value="注册"><br>
+</form>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>科大电视台首页</title>
+<link rel="stylesheet" type="text/css" href="<{$res}>/css/style.css" />
+<script src="<{$res}>/js/date.js" type="text/javascript" charset="utf-8"></script>
+<script src="<{$res}>/js/ajax.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="<{$res}>/js/jquery-1.3.2.min.js" ></script>
+<script type="text/javascript" src="<{$res}>/js/jquery-ui.min.js" ></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
+});
+</script>
+
+</head>
+<body>
+<div id="main_container">
+
+        
+	<div class="header">
+
+            <div class="logo"><a href="<{$app}>">adaria</a></div>
+            <div class="slogan">| free css template</div> 
+    </div> <!--end of header--> 
+    
+    <div class="menu">
+        <ul>
+        <li><a href="<{$app}>/index">首页</a></li>
+		<li><a href="">频道</a>
+			<ul>
+				<{section loop=$cols name="ls" start="0" step="1"}>	
+				<li><a href="<{$app}>/col/index/cid/<{$cols[ls].cid}>" title=""><{$cols[ls].cname}></a></li>
+				<{/section}>
+            </ul>
+		</li>
+		<li><a href="<{$app}>/notice">公告</a></li>
+		<!--<li><a href="<{$app}>/index/wall">留言墙</a></li>-->
+		<li><a href="<{$app}>/member">关于我们</a></li>
+		<{if $smarty.session.isLogin==1}>
+		<li style="float:right;"><a href="<{$app}>/user/isLogout" style="font-size: 15px;">用户<b style="color:red"><{$smarty.session.alias}></b>你好,点击此处退出！</a></li>
+		<{/if}>
+			
+        </ul>
+    </div>

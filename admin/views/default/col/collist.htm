@@ -1,0 +1,23 @@
+<table border="0" class="list">
+	<tr>
+		<th width="20">&nbsp;</th>
+		<th width="300">频道名</th>
+		<th width="80">优先级</th>
+	</tr>
+	
+
+	<{section loop=$col name="ls" start="0" step="1"}>
+				<tr>
+					<td><input type="checkbox" name="cid[]" value="<{$col[ls].cid}>" /></td>
+					<td><a href="<{$col[ls].url}>"><{$col[ls].cname}></a></td>
+					<td><{$col[ls].crank}><td>
+					<td>
+						<a target="_blank" href="javascript:ajaxBox('<{$app}>/col/mod/cid/<{$col[ls].cid}>', 'popBox')">编辑</a>
+					</td>
+				</tr>
+	
+		<{sectionelse}>	
+				无频道
+		<{/section}>
+</table>
+

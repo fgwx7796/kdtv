@@ -1,0 +1,38 @@
+<table border="0" class="list">
+	<tr>
+		<th width="20">&nbsp;</th>
+		<th width="200">标题</th>
+		<th width="200">内容</th>
+		<th width="100">开始时间</th>
+		<th width="100">结束时间</th>
+		<th width="80">是否显示</th>
+		<th width="100">操作</th>
+	</tr>
+	
+
+	<{section loop=$notice name="ls" start="0" step="1"}>
+				<tr>
+					<td><input type="checkbox" name="nid[]" value="<{$notice[ls].nid}>" /></td>
+					<td><{$notice[ls].title|truncate:21}></td>
+					<td><{$notice[ls].content|truncate:21}></td>
+					<td><{$notice[ls].strtime|date_format:"%Y-%m-%d"}></td>
+					<td><{$notice[ls].stptime|date_format:"%Y-%m-%d"}></td>
+					<td>
+						<{if $notice[ls].isshow == 1}>
+							是
+						<{else}>
+							否
+						<{/if}>
+					</td>
+					<td>
+						<a target="_blank" href="javascript:ajaxBox('<{$app}>/notice/mod/nid/<{$notice[ls].nid}>', 'popBox')">编辑</a>
+						<a id="" href="" onclick="var rel=confirm('确定要删除么？');if(rel)this.href='<{$app}>/notice/del/nid/<{$notice[ls].nid}>';">删除</a>
+					</td>
+				</tr>
+	
+		<{sectionelse}>	
+				无公告
+		<{/section}>
+		<tr><td align="right" colspan="5"><{$fpage}></td></tr>	
+</table>
+

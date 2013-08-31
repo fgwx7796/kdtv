@@ -1,0 +1,37 @@
+<form action="<{$app}>/user/mod" method="post" accept-charset="utf-8">
+	<input type="hidden" name="uid" value="<{$user.vid}>">
+	<table border="0">
+		<tr>
+			<td>用户名</td>
+			<td><input type="text" name="url" value="<{$user.username}>" /></td>
+			<td>标题：</td>
+			<td><input type="text" name="title" value="<{$user.title}>" /></td>
+		</tr>
+		<tr>
+			<td>图片：</td>
+			<td><input type="file" name="picurl" value="" /><br>
+				<img src="<{$user.picurl}>" />
+			</td>
+			<td>频道：</td>
+			<td><select name="cid" id="cid">
+					<{section loop=$cols name="ls"}>
+						<option value="<{$cols[ls].cid}>"><{$cols[ls].cname}></option>
+					<{/section}>
+			</select></td>
+
+		</tr>
+		<tr>
+			<td style="vertical-align: top;">简介：</td>
+			<td colspan="3"><textarea style="width: 410px; height: 98px;" name="summary" rows="" cols=""><{$user.summary}></textarea></td>
+		</tr>
+		<tr>
+			<td>首页幻灯</td>
+			<td><input type="checkbox" name="top" value="1"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name="submod" value="提交&rarr;" /></td>
+			<td><input type="reset" name="" value="重置" /></td>
+		</tr>
+	</table>
+	<span class="" onclick="this.parentNode.style.display='none';">关闭</span>
+</form>

@@ -1,0 +1,39 @@
+<form action="<{$app}>/video/mod" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+	<span class="closeSpan" onclick="this.parentNode.parentNode.style.display='none';">关闭</span>
+	<input type="hidden" name="vid" value="<{$video.vid}>">
+	<table border="0">
+		<p style="font-size:15px;color:red;">请先将视频文件上传到网站根目录的<b>\public\uploads\video</b>文件夹下</p>
+		<tr>
+			<td>视频文件名：</td>
+			<td><input type="text" name="url" value="<{$video.url}>" /></td>
+			<td>标题：</td>
+			<td><input type="text" name="title" value="<{$video.title}>" /></td>
+		</tr>
+		<tr>
+			<td>图片：</td>
+			<td><input type="file" name="picurl" value="" /><br>
+				<img src="<{$video.picurl}>" width="200px"/>
+			</td>
+			<td>频道：</td>
+			<td><select name="cid" id="cid">
+					<{section loop=$cols name="ls"}>
+						<option value="<{$cols[ls].cid}>"><{$cols[ls].cname}></option>
+					<{/section}>
+			</select></td>
+
+		</tr>
+		<tr>
+			<td style="vertical-align: top;">简介：</td>
+			<td colspan="3"><textarea style="width: 410px; height: 98px;" name="summary" rows="" cols=""><{$video.summary}></textarea></td>
+		</tr>
+		<tr>
+			<td>首页幻灯</td>
+			<td><input type="checkbox" name="top" value="1"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name="submod" value="提交&rarr;" /></td>
+			<td><input type="reset" name="" value="重置" /></td>
+		</tr>
+	</table>
+
+</form>

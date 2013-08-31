@@ -1,0 +1,13 @@
+
+<center>
+	<h1>用户注册</h1>
+<form action="<{$url}>/insert" method="post" enctype="multipart/form-data">
+	用户名: <input type="text" name="username"><br>
+	密码: <input type="password" name="passwd"><br>
+	重复密码: <input type="password" name="repasswd"><br>
+	头像：<input type="file" name="faceurl1" value=""><br />
+	验证码: <input type="text" name="code" size="5"> <img src="<{$url}>/code" onclick="this.src='<{$url}>/code/'+Math.random()"><br>
+	
+	<input type="submit" name="sub" value="注册""><br>
+</form>
+<center>

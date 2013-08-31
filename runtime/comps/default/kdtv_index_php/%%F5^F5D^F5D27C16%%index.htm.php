@@ -1,0 +1,65 @@
+<?php /* Smarty version 2.6.18, created on 2013-08-30 16:39:21
+         compiled from member/index.htm */ ?>
+	<div class="center_content_pages">
+        	<div class="pages_banner">
+            关于我们
+            </div>
+        	<div class="left_about"> 
+                       
+                <div class="slider_content">
+
+					<ul class="partnav">                    
+						<li class="partnav-item" id="nav-fragment-1"><a href="#fragment-1">幻灯片标题1</a></li>
+						<li class="partnav-item" id="nav-fragment-2"><a href="#fragment-2">幻灯片标题2</a></li>
+						<li class="partnav-item" id="nav-fragment-3"><a href="#fragment-3">幻灯片标题3</a></li>
+					</ul>
+				</div>
+				  
+            </div> <!--end of left content-->
+            
+            
+            <div class="right_about">
+              <div id="" class="member">
+                  <img src="<?php echo $this->_tpl_vars['res']; ?>
+/images/face.jpg" alt="" title=""/>
+					<ul id="" class="memsum">
+						<li><span class="light">姓名：</span>闫志强</li>
+						<li><span class="light">职位：</span>颠三倒四</li>
+						<li><span class="light">简介：</span><p>士大夫花时间快递费和可就三的发和可就和空间士大夫航空界三的和发</p></li>
+						<li><span class="light">入台时间：</span>2013/23/12</li>
+					</ul>
+				</div>
+				<div class="border"></div>
+
+				<div id="" class="member">
+               		<img src="<?php echo $this->_tpl_vars['res']; ?>
+/images/face.jpg" alt="" title=""/>
+					<ul id="" class="memsum">
+						<li><span class="light">姓名：</span>闫志强</li>
+						<li><span class="light">职位：</span>颠三倒四</li>
+						<li><span class="light">简介：</span><p>士大夫花时间快递费和可就三的发和可就和空间士大夫航空界三的和发</p></li>
+						<li><span class="light">入台时间：</span>2013/23/12</li>
+					</ul>
+				</div>
+				<div class="border"></div>
+
+				<div id="" class="member">
+               		<img src="<?php echo $this->_tpl_vars['res']; ?>
+/images/face.jpg" alt="" title=""/>
+					<ul id="" class="memsum">
+						<li><span class="light">姓名：</span>闫志强</li>
+						<li><span class="light">职位：</span>颠三倒四</li>
+						<li><span class="light">简介：</span><p>士大夫花时间快递费和可就三的发和可就和空间士大夫航空界三的和发</p></li>
+						<li><span class="light">入台时间：</span>2013/23/12</li>
+					</ul>
+				</div>
+				<div class="border"></div>
+
+				
+                   
+            </div>
+            
+            
+            
+        <div class="clear"></div>
+        </div>

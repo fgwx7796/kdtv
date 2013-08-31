@@ -1,0 +1,29 @@
+<table border="0" class="list">
+	<tr>
+		<th width="20">&nbsp;</th>
+		<th width="300">成员名</th>
+		<th width="100">部门</th>
+		<th width="100">职位</th>
+		<th width="100">添加时间</th>
+		<th width="100">操作</th>
+	</tr>
+	
+
+	<{section loop=$mem name="ls" start="0" step="1"}>
+				<tr>
+					<td><input type="checkbox" name="mid[]" value="<{$mem[ls].mid}>" /></td>
+					<td><{$mem[ls].mname}></td>
+					<td><{$mem[ls].pname}></td>
+					<td><{$mem[ls].wname}></td>
+					<td><{$mem[ls].time|date_format:"%Y-%m-%d"}></td>
+					<td>
+						<a id="" href="" onclick="var rel=confirm('确定要删除么？');if(rel)this.href='<{$app}>/member/del/mid/<{$mem[ls].mid}>';">删除</a>
+					</td>
+				</tr>
+	
+		<{sectionelse}>	
+				无留言
+		<{/section}>
+		<tr><td align="right" colspan="5"><{$fpage}></td></tr>	
+</table>
+

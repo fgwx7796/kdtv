@@ -1,0 +1,83 @@
+<ul class="wall">
+    <{if $smarty.session.isLogin==0}>
+    	<li>
+            <div id="" class="walllogin">
+				<form action="<{$app}>/user/islogin" method="post" accept-charset="utf-8">
+                    <table border="0" class="loginmini">
+                        <caption>
+                            请登录之后留言
+                        </caption>
+                        <tr>
+                            <td>
+                                用户名：
+                            </td>
+                            <td colspan="2">
+                                <input type="text" name="username" value="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                密码：
+                            </td>
+                            <td colspan="2">
+                                <input type="password" name="passwd" value="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                验证码：
+                            </td>
+                            <td>
+                                <input type="text" name="code" value="" size="7" />
+                            </td>
+                            <td>
+                                <img class="vcode" src="<{$url}>/code" onclick="this.src='<{$url}>/code/'+Math.random()" />
+                            </td>
+                        </tr>
+                    </table>
+                    <input class="form_submit" type="submit" name="sub" value="登陆" />
+					<a class="reg" href="<{$app}>/user/reg" target="_blank">注册</a>
+                </form>
+            </div>
+        </li>
+        <{else}>
+            <li>
+			<img class="faceLeft" src="<{$smarty.session.faceurl2}>" alt="" title="" border="0"
+                />
+                <div id="" class="walladd">
+                    <form action="<{$app}>/wall/add" method="post" accept-charset="utf-8">
+						<textarea class="form_input" type="text" name="content" value="" style="height:70px;width:190px;background-color:white;margin-bottom: 10px;max-height: 200px; max-width: 190px;"></textarea>
+						验证码：<input type="text" name="code" value="" size="4" /><img class="vcode" src="<{$url}>/code" onclick="this.src='<{$url}>/code/'+Math.random()" /><br>
+                        <input class="form_submit" type="submit" name="sub" value="留言" />
+                        <input class="form_submit" type="reset" name="some_name" value="重置" />
+                    </form>
+                </div>
+                <div style="clear:both">
+                </div>
+			</li>
+		 <{/if}>
+
+            <{section loop=$wall name="ls" start="0" step="1" }>
+			<li>
+			<{if $smarty.section.ls.iteration%2==0}>
+				<img class="faceRight" src="<{$wall[ls].face}>" alt="" title="" border="0" />
+			<{else}>
+				<img class="faceLeft" src="<{$wall[ls].face}>" alt="" title="" border="-1" />
+			<{/if}>
+
+                    <p class="content">
+                        <span class="username">
+							<{$wall[ls].alias}>：
+                        </span>
+						<{$wall[ls].content|truncate:350}>
+                        <span class="date2">
+							<{$wall[ls].ctime|date_format:"%Y-%m-%d"}>
+                        </span>
+                    </p>
+                    <div style="clear:both"></div>
+                </li>
+				<{/section}>
+				<{$fpage}>
+     
+</ul>
+

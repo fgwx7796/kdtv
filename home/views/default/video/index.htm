@@ -1,0 +1,147 @@
+	<div class="center_content_pages">
+        	<div class="left_content"> 
+               <div class="pages_banner"><{$date.title}></div>
+                    <div id="player" class="" style="display: inline-block";> 
+						<!--酷播迷你 CuPlayerMiniV2.2 代码开始-->
+						<script type="text/javascript" src="<{$res}>/CuPlayer/Images/swfobject.js"></script>
+						<div id="CuPlayer" > <strong>科大电视台温馨提示：您的Flash Player版本过低，请<a href="http://www.adobe.com/" >点此进行播放器升级</a>！</strong> </div>
+						<script type=text/javascript>
+						var so = new SWFObject("<{$res}>/CuPlayer/CuPlayerMiniV22_Black_S.swf","CuPlayer","600","365","9","#000000");
+						so.addParam("allowfullscreen","true");
+						so.addParam("allowscriptaccess","");
+						so.addParam("wmode","opaque");
+						so.addParam("quality","high");
+						so.addParam("salign","lt");
+						so.addVariable("CuPlayerFile","<{$date.url}>");//视频文件路径
+						so.addVariable("CuPlayerImage","<{$date.picurl}>");//视频预览图路径
+						so.addVariable("CuPlayerLogo","");//播放器logo路径
+						so.addVariable("CuPlayerShowImage","true");
+						so.addVariable("CuPlayerWidth","600");
+						so.addVariable("CuPlayerHeight","365");
+						so.addVariable("CuPlayerAutoPlay","false");
+						so.addVariable("CuPlayerAutoRepeat","false");
+						so.addVariable("CuPlayerShowControl","true");
+						so.addVariable("CuPlayerAutoHideControl","false");
+						so.addVariable("CuPlayerAutoHideTime","6");
+						so.addVariable("CuPlayerVolume","80");
+						so.write("CuPlayer");
+						</script>
+						<!--酷播迷你 CuPlayerMiniV2.2 代码结束-->
+					</div>
+					<ul class="wall">
+					<li>
+					<div id="" class="videologin">
+						<form action="index_submit" method="post" accept-charset="utf-8">
+							<table border="0" class="loginmini2">
+								<caption>请登录之后留言</caption>
+								<tr>
+									<td>用户名：</td>
+									<td colspan="2"><input type="text" name="username" value="" /></td>
+									<td><input class="form_submit" type="submit" name="sub" value="登陆" /> </td>
+								</tr>
+								<tr>
+									<td>密码：</td>
+									<td colspan="2"><input type="password" name="passwd" value="" /></td>
+									<td style="text-align: center;"><a href="#" class="reg">注册</a></td>
+								</tr>
+								<tr>
+									<td>验证码：</td>
+									<td><input type="text" name="code" value="" size="7"/></td>
+									<td><img class="vcode" src="<{$res}>/<{$res}>/images/pic3.jpg" alt="" title="" border="0"/></td>
+								</tr>
+								
+							</table>
+						</form>
+					 </div>	
+						 
+					</li>
+					<li>
+						 <img class="face" src="<{$res}>/images/pic3.jpg" alt="" title="" border="0" />
+						 <div id="" class="walladd">
+						 	<form action="index_submit" method="post" accept-charset="utf-8">
+								<textarea class="form_input" type="text" name="content" value="" style="height:70px;width:190px;background-color:white;margin-bottom: 10px;max-height: 200px; max-width: 190px;"></textarea>
+								<input class="form_submit" type="submit" name="sub" value="留言" /> 								
+								<input class="form_submit" type="reset" name="some_name" value="重置" />
+						 	</form>
+						 </div>
+						 	
+						
+						 	
+						 <div style="clear:both"></div>
+						 
+					</li>
+					<li>
+						 <img class="face" src="<{$res}>/images/pic3.jpg" alt="" title="" border="0" />
+						 <p class="content2"><span class="username">夜刃羽狸：</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqa. <span class="date">2013-04-22</span></p>	
+						 <div style="clear:both"></div>
+						 
+					</li>
+
+					<li>
+						 <img class="face" src="<{$res}>/images/pic3.jpg" alt="" title="" border="0" />
+						 <p class="content2"><span class="username">夜刃羽狸：</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqa. <span class="date">2013-04-22</span></p>	
+						 <div style="clear:both"></div>
+						 
+						 </li>
+
+						 <li>
+						 <img class="face" src="<{$res}>/images/pic3.jpg" alt="" title="" border="0" />
+						 <p class="content2"><span class="username">夜刃羽狸：</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqa. <span class="date">2013-04-22</span></p>	
+						 <div style="clear:both"></div>
+						 
+					</li>
+				</ul>
+            </div> <!--end of left content-->
+            
+            
+            <div class="right_content">
+               <div class="box290">
+                <h2>推荐视频</h2>
+                    <ul class="left_menu">
+						<li>
+						<a href="about.html" title="">
+							<img src="<{$res}>/images/pages.jpg" alt="" title="" border="0" class="pages_pic" style="width:100px;height:70px;float:left;"/>
+							<span class="vsummary">测试视频标题</span>
+							<span class="vsummary">播放次数：10次</span>
+							<span class="vsummary">2013/04/18</span>
+						</a><div style="clear:both"> </div>
+						</li>
+                        <li>
+						<a href="about.html" title="">
+						<img src="<{$res}>/images/pages.jpg" alt="" title="" border="0" class="pages_pic" style="width:100px;height:70px;float:left;"/>
+							<span class="vsummary">测试视频标题</span>
+							<span class="vsummary">播放次数：10次</span>
+							<span class="vsummary">2013/04/18</span>
+						</a><div style="clear:both"> </div>
+						</li>
+
+						<li>
+						<a href="about.html" title="">
+						<img src="<{$res}>/images/pages.jpg" alt="" title="" border="0" class="pages_pic" style="width:100px;height:70px;float:left;"/>
+							<span class="vsummary">测试视频标题</span>
+							<span class="vsummary">播放次数：10次</span>
+							<span class="vsummary">2013/04/18</span>
+						</a><div style="clear:both"> </div>
+						</li>
+
+						<li>
+						<a href="about.html" title="">
+							<img src="<{$res}>/images/pages.jpg" alt="" title="" border="0" class="pages_pic" style="width:100px;height:70px;float:left;"/>
+							<span class="vsummary">测试视频标题</span>
+							<span class="vsummary">播放次数：10次</span>
+							<span class="vsummary">2013/04/18</span>
+						</a><div style="clear:both"> </div>
+						</li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+            
+            
+            
+        <div class="clear"></div>
+        </div>  
+         
+        
+        

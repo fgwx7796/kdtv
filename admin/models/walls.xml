@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<form>
+	<input name="content" type="length" value="30-300" msg="内容必须在10-100个字之间!" />
+</form>

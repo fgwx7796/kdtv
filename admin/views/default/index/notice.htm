@@ -1,0 +1,74 @@
+<div class="center_content_pages">
+	<div class="pages_banner">公告管理</div>
+	<div class="right_about2">
+			<h1 id="">添加公告</h1>
+			<form action="<{$app}>/notice/add" method="post" accept-charset="utf-8">
+				<table border="0">
+					<tr>
+						<td>标题：</td>
+						<td><input type="text" name="title" value="" /></td>
+						</tr>
+						<tr>
+							<td>开始时间：</td>
+							<td><input type="text" name="strtime" value="" onfocus="HS_setDate(this)"/></td>
+							<td>结束时间：</td>
+							<td><input type="text" name="stptime" value="" onfocus="HS_setDate(this)"/></td>
+
+						</tr>
+						<tr>
+					<td style="vertical-align: top;">内容：</td>
+						<td colspan="3"><textarea style="width: 410px; height: 98px;" name="content" rows="" cols=""></textarea></td>
+					</tr>
+					<tr>
+						<td>立即发布</td>
+						<td><input type="checkbox" name="isshow"></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="提交&rarr;" /></td>
+						<td><input type="reset" name="" value="重置" /></td>
+					</tr>
+				</table>
+			</form>
+		<div class="border2"></div>
+		<h1 id="">公告列表</h1>
+		<div id="popBox" class=""></div>
+		<form action="<{$app}>/notice/del" method="get" onsubmit="return confirm('你确定么？');"  accept-charset="utf-8">
+			<div id="fpage" class="">
+				无公告
+			</div>
+			<input type="submit" value="删除"/>
+		</form>
+		
+		
+	</div>
+ <div class="clear"></div>
+</div>
+<script>
+	var cache=new Array();
+	function setPage(url){
+		var obj=document.getElementById("fpage");
+		
+		if(typeof(cache[url])=="undefined"){
+			var ajax=Ajax();
+
+			ajax.get(url,function(data){
+					obj.innerHTML=data;
+					cache[url]=data;	
+				});
+		}else{
+			obj.innerHTML=cache[url];	
+		}	
+	}
+	function ajaxBox(url, id){
+		var obj=document.getElementById(id);
+				obj.style.display = "block";
+		var ajax=Ajax();
+		ajax.get(url,function(data){
+				obj.innerHTML=data;
+				obj.style.display = "block";
+			});
+	}
+	setPage("<{$app}>/notice/noticelist?page=1");
+</script>
+ 
+

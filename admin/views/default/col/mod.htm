@@ -1,0 +1,16 @@
+<form action="<{$app}>/col/mod" method="post" accept-charset="utf-8">
+	<input type="hidden" name="cid" value="<{$cols.cid}>">
+	<table border="0">
+		<tr>
+			<td>频道名：</td>
+			<td><input type="text" name="cname" value="<{$cols.cname}>" /></td>
+			<td>优先级</td>
+			<td><input type="text" name="crank" value="<{$cols.crank}>" /></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name="submod" value="提交&rarr;" /></td>
+			<td><input type="reset" name="" value="重置" /></td>
+		</tr>
+	</table>
+</form>
+

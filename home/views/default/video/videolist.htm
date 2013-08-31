@@ -1,0 +1,15 @@
+<ul id="" class="col">
+<{section loop=$video name="ls" start="0" step="1"}>
+	<li class="colleft">
+	<a href="<{$app}>/video/player/vid/<{$video[ls].vid}>" target="_blank"><img src="<{$video[ls].picurl}>" alt="" title="<{$video[ls].title}>" border="-1">
+  		<p class="title"><{$video[ls].title}></p></a>
+	</li>
+
+<{sectionelse}>	
+		无视频
+<{/section}>
+</ul>
+
+<div id="" class="clear">
+	<{$fpage}>
+</div>
